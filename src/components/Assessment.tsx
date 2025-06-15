@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
+import { 
   ChartContainer,
   ChartLegendContent,
   ChartTooltipContent,
@@ -446,7 +446,7 @@ const MedicalAssessment: React.FC = () => {
     tmp[idx] = val;
     setAnswers(tmp);
   };
-
+  
   const calculateResults = () => {
     const diseases = DISEASES[category];
     const out = diseases.map((d) => {
@@ -537,7 +537,7 @@ const MedicalAssessment: React.FC = () => {
     doc.save("assessment.pdf");
   };
 
-  return (
+      return (
     <div className="max-w-5xl mx-auto bg-card rounded-lg p-8 shadow-md mt-8 mb-12 border">
       <h1 className="text-2xl font-bold mb-6 text-primary text-center">Medical Assessment</h1>
       <div className="flex flex-col md:flex-row gap-8">
@@ -571,7 +571,7 @@ const MedicalAssessment: React.FC = () => {
               {allUnlikely && (
                 <div className="mt-4 text-center text-destructive font-bold">
                   No clear match found. Please consult a doctor.
-                </div>
+              </div>
               )}
               {/* Download PDF Button */}
               <div className="mt-6 flex justify-center">
@@ -634,9 +634,9 @@ const MedicalAssessment: React.FC = () => {
                             : "#6b7280",
                         dataKey: r.name,
                       }))} />
-                    </div>
+          </div>
                   </ChartContainer>
-                </div>
+        </div>
               )}
             </div>
           )}
@@ -673,15 +673,15 @@ const MedicalAssessment: React.FC = () => {
                   <span className="inline-block w-8 text-center bg-secondary rounded px-1">
                     {answers[i]}
                   </span>
-                </div>
+            </div>
               </div>
             ))}
-          </div>
+            </div>
           <div className="text-center mb-6">
             <Button size="lg" className="px-8 py-2" onClick={calculateResults}>
               Calculate Assessment
             </Button>
-          </div>
+            </div>
         </div>
       </div>
     </div>
